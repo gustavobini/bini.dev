@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write \"{src,pages}/**/*.js\""
   },
   "dependencies": {
     "next": "9.0.3",
