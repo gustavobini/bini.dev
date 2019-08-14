@@ -5,6 +5,6 @@ import { Page } from '../../src/layout/main';
 export default () => (
   <div>
     <Page />
-    <p>there's nothing here yet :(</p>
+    <p>i shamelessly copypasted this page from the blog one</p>
   </div>
 );
