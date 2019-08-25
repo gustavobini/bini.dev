@@ -18,6 +18,7 @@ export default () => (
         Brazil who currently works as a frontend developer. His interests vary
         from cooking to creating user experiments and to functional programming.
       </p>
+      <h1>Added this random h1</h1>
     </section>
     <style jsx>
       {`

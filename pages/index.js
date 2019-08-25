@@ -9,7 +9,6 @@ export default () => (
     <Nav />
     <p>hi there 😊</p>
     <p>this is my playground - feel free to look around</p>
-    <p>if you wanna get in touch, contact me @gustavobini on twitter</p>
     <style jsx>
       {`
         p:first-of-type {
