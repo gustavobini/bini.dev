@@ -7,18 +7,7 @@ export default () => (
   <div>
     <Page />
     <Nav />
-    <article>{/* <h1>Gustavo Bini</h1> */}</article>
-    <section>
-      <img
-        src="static/bini.jpeg"
-        alt="A picture of the author of this website."
-      />
-      <p>
-        <strong>Gustavo Bini</strong> is a software developer from Curitiba,
-        Brazil who currently works as a frontend developer. His interests vary
-        from cooking to creating user experiments and to functional programming.
-      </p>
-    </section>
+    <h1>hi</h1>
     <style jsx>
       {`
         section {
