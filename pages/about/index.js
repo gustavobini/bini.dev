@@ -7,7 +7,6 @@ export default () => (
   <div>
     <Page />
     <Nav />
-    <article>{/* <h1>Gustavo Bini</h1> */}</article>
     <section>
       <img
         src="static/bini.jpeg"
@@ -17,6 +16,7 @@ export default () => (
         <strong>Gustavo Bini</strong> is a software developer from Curitiba,
         Brazil who currently works as a frontend developer. His interests vary
         from cooking to creating user experiments and to functional programming.
+        Can you spot the difference?
       </p>
     </section>
     <style jsx>
