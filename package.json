@@ -9,6 +9,8 @@
     "format": "prettier --write \"{src,pages}/**/*.js\""
   },
   "dependencies": {
+    "@mdx-js/loader": "^1.4.0",
+    "@next/mdx": "^9.0.5",
     "next": "9.0.3",
     "react": "16.9.0",
     "react-dom": "16.9.0"
