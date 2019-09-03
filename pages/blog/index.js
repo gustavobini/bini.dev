@@ -1,43 +1,56 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { fetchPosts } from './fetch-posts';
+import { Page } from '../../src/layout/main';
+import { Nav } from '../../src/components/nav';
+
 export default function Blog(props) {
-  return props.posts.map((post, index) => (
-    <div>
-      <Link href={`/blog/posts/${post.url}`} key={index}>
-        <a>{post.title}</a>
-      </Link>
-    </div>
-  ));
-}
+  return (
+    <>
+      <Page pageTitle="blog" />
+      <Nav />
+      <section>
+        <ol>
+          {props.posts.map((post, index) => (
+            <li>
+              <Link href={`/blog/posts/${post.url}`} key={index}>
+                <a>
+                  {post.title} ({post.createdAt})
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </section>
+      <style jsx>
+        {`
+          section {
+            margin-top: 32px;
+          }
 
-function fileName(mdx) {
-  return mdx.substring(2, mdx.length - 4);
-}
+          ol {
+            list-style: none;
+          }
 
-function requireAll(r) {
-  return r.keys().map(key => ({
-    content: r(key),
-    url: fileName(key)
-  }));
-}
+          li {
+            line-height: 1.5;
+          }
 
-function requirePosts() {
-  return requireAll(require.context('./posts', true, /\.mdx$/));
-}
-
-function parsePosts(posts) {
-  return posts.map(post => {
-    return {
-      ...post.content.meta,
-      Post: post.content.default,
-      url: post.url
-    };
-  });
+          li a {
+            color: #0a651f;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 900;
+          }
+        `}
+      </style>
+    </>
+  );
 }
 
 Blog.getInitialProps = async () => {
-  const posts = parsePosts(requirePosts());
+  const posts = fetchPosts();
 
   return {
     posts

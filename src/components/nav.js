@@ -1,14 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 
-export function Nav() {
+export function Nav({ vertical }) {
   return (
     <header>
       <Link href="/">
         <a className="pagename">bini.dev</a>
       </Link>
       <nav>
-        <ul>
+        <ul className={vertical ? 'vertical' : ''}>
           <li>
             <a
               href="https://github.com/gustavobini"
@@ -52,6 +52,15 @@ export function Nav() {
             margin: 0 auto;
             min-width: 200px;
             max-width: 800px;
+          }
+
+          ul.vertical {
+            flex-direction: column;
+            align-items: flex-end;
+          }
+
+          ul.vertical li {
+            margin-bottom: 16px;
           }
 
           li {

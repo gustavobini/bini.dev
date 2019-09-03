@@ -5,9 +5,8 @@ import { Nav } from '../../src/components/nav';
 
 export default () => (
   <div>
-    <Page />
+    <Page pageTitle="about" />
     <Nav />
-    <article>{/* <h1>Gustavo Bini</h1> */}</article>
     <section>
       <img
         src="static/bini.jpeg"
