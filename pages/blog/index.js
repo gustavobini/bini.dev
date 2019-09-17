@@ -13,8 +13,8 @@ export default function Blog(props) {
       <section>
         <ol>
           {props.posts.map((post, index) => (
-            <li>
-              <Link href={`/blog/posts/${post.url}`} key={index}>
+            <li key={index}>
+              <Link href={`/blog/posts/${post.url}`}>
                 <a>
                   {post.title} ({post.createdAt})
                 </a>
