@@ -25,7 +25,7 @@ export function Page({ pageTitle = '' }) {
           }
 
           body {
-            padding: 12px;
+            padding: 1rem;
             background-color: #f5f5f5;
             color: #666;
           }

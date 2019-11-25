@@ -1,0 +1,148 @@
+import { Post } from '../../../src/layout/post';
+
+export const meta = {
+  createdAt: '2019-11-10',
+  title: 'Why I avoid boolean props'
+};
+
+<Post>
+
+# Why I avoid boolean props
+
+When creating components that are meant to be used by people other than you, 
+it's vital to consider how self-explanatory your component's API is. By that,
+I mean it's props.
+
+Consider the following example:
+
+```jsx
+<Card small />
+```
+
+The Card component might be implemented as follows:
+
+```jsx
+function Card(props) {
+  return (
+    <section style={{width: props.small ? '40px' : '80px'}}>
+      {props.children}
+    </section>
+  )
+}
+
+Card.propTypes = {
+  small: PropTypes.bool
+}
+```
+
+And that works just fine! Except that with just the _small_ word, we don't quite
+know what we made smaller. When rapidly developing a component, we often use short
+words that make sense for us *at that moment* but they tend to get confusing.
+
+Before we get to a better name for that prop, let's take a look at another problem.
+
+What happens if we now have 3 different Card sizes? Small, medium and large. Well,
+the implementation certainly needs to be changed. We need to get rid of the ternary
+operator and put that logic somewhere else.
+
+```jsx
+function getWidth({small, medium, large}) {
+  let widthSize = '40px';
+
+  if (medium) {
+    widthSize = '60px';
+  }
+
+  if (large) {
+    widthSize = '80px';
+  }
+
+  return widthSize;
+}
+
+function Card(props) {
+  return (
+    <section style={{width: getWidth(props)}}>
+      {props.children}
+    </section>
+  )
+}
+
+Card.propTypes = {
+  small: PropTypes.bool,
+  medium: PropTypes.bool,
+  large: PropTypes.bool
+}
+```
+
+That works too! Now we can use our component and it's 3 different sizes:
+
+```jsx
+<Card small />
+<Card medium />
+<Card large />
+```
+
+We might say that our work here is done, but is it? Look carefully and think from
+the user (a developer) point of view. How self-explanatory are these props? Do you
+remember our one prop naming problem? Well, now we have three.
+
+What happens if I omit all of them? What happens if I use two of them at the same time?
+
+```jsx
+<Card />
+<Card small large />
+<Card large medium />
+```
+
+If our component cannot be _small_, _medium_ and _large_ at the same time, then why
+do we allow it to be consumed as if it can? These props all refer to one style in our
+component, a style that cannot receive multiple values. Let's make things more clear
+to the user and change our API.
+
+```jsx
+const widthSize = {
+  small: '40px',
+  medium: '60px',
+  large: '80px'
+}
+
+function Card(props) {
+  return (
+    <section style={{width: widthSize[props.widthSize]}}>
+      {props.children}
+    </section>
+  )
+}
+
+Card.propTypes = {
+  widthSize: PropTypes.oneOf(['small', 'medium', 'large'])
+}
+```
+
+Now, our component is consumed like this:
+
+```jsx
+<Card widthSize="medium" />
+```
+
+Is it more work? Certainly. Remember though that we write code for humans to read
+and your fellow developer will thank you when he does not need to take a look at
+your implementation to find out what will happen.
+
+In summary, make your component's API clear to the user consuming it. Prefer
+well-named props with a clear intent.
+
+Do this:
+
+```jsx
+<Button theme="primary" />
+```
+
+Instead of this:
+
+```jsx
+<Button primary />
+```
+
+</Post>

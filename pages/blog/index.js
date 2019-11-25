@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { fetchPosts } from './fetch-posts';
 import { Page } from '../../src/layout/main';
 import { Nav } from '../../src/components/nav';
+import { theme } from '../../src/layout/theme';
 
 export default function Blog(props) {
   return (
@@ -35,12 +36,13 @@ export default function Blog(props) {
 
           li {
             line-height: 1.5;
+            margin: 1rem 0;
           }
 
           li a {
-            color: #0a651f;
+            color: ${theme.link.color};
             text-decoration: none;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 900;
           }
         `}

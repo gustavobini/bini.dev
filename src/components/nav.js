@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { theme } from '../layout/theme';
 
 export function Nav({ vertical }) {
   return (
@@ -10,22 +11,8 @@ export function Nav({ vertical }) {
       <nav>
         <ul className={vertical ? 'vertical' : ''}>
           <li>
-            <a
-              href="https://github.com/gustavobini"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github
-            </a>
-          </li>
-          <li>
             <Link href="/blog">
               <a>blog</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <a>about</a>
             </Link>
           </li>
         </ul>
@@ -36,7 +23,7 @@ export function Nav({ vertical }) {
             display: block;
             font-size: 2rem;
 
-            color: #ff5722;
+            color: ${theme.title.color};
             text-align: right;
             text-decoration: none;
           }

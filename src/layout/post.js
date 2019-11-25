@@ -2,19 +2,21 @@ import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 
 import { Page } from './main';
+import { theme } from './theme';
 
 const Wrapper = props => (
   <main style={{ padding: '20px', backgroundColor: 'tomato' }} {...props} />
 );
 
-const MyH1 = props => <h1 style={{ color: 'tomato' }} {...props} />;
+const MyH1 = props => <h1 style={ theme.title } {...props} />;
 const MyParagraph = props => (
-  <p style={{ fontSize: '18px', lineHeight: 1.6 }} {...props} />
+  <p style={theme.text} {...props} />
 );
 const components = {
   h1: MyH1,
   p: MyParagraph,
-  wrapper: Wrapper
+  wrapper: Wrapper,
+  pre: props => <pre style={{color:  '#f5f5f5', overflowX: 'auto', backgroundColor: '#666', padding: '1rem', borderRadius: '4px'}}>{props.children}</pre>
 };
 
 export function Post({ children }) {
