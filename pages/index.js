@@ -9,27 +9,18 @@ export default () => (
     <Page />
     <Nav vertical />
     <section>
-      <img className="author" src="static/bini.jpeg" alt="A picture of the author." load="lazy" />
+      <img
+        className="author"
+        src="static/bini.jpeg"
+        alt="A picture of the author."
+        load="lazy"
+      />
       <p>
         <strong>Gustavo Bini</strong> is a software developer from Curitiba,
         Brazil who currently works as a frontend developer. His interests vary
         from cooking to creating user experiments and to functional programming.
       </p>
     </section>
-    <a
-      href="https://github.com/gustavobini"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        className="media"
-        src="static/bini.jpeg"
-        alt="GitHub's Octocat logo."
-        load="lazy"
-        width="32"
-        height="32"
-      />
-    </a>
     <style jsx>
       {`
         section {

@@ -5,9 +5,25 @@ import { theme } from '../layout/theme';
 export function Nav({ vertical }) {
   return (
     <header>
-      <Link href="/">
-        <a className="pagename">bini.dev</a>
-      </Link>
+      <section className="links">
+        <a
+          href="https://github.com/gustavobini"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            className="media"
+            src="static/github-mark.svg"
+            alt="GitHub's Octocat logo."
+            load="lazy"
+            width="32"
+            height="32"
+          />
+        </a>
+        <Link href="/">
+          <a className="pagename">bini.dev</a>
+        </Link>
+      </section>
       <nav>
         <ul className={vertical ? 'vertical' : ''}>
           <li>
@@ -19,8 +35,12 @@ export function Nav({ vertical }) {
       </nav>
       <style jsx>
         {`
+          section.links {
+            display: flex;
+            justify-content: space-between;
+          }
+
           a.pagename {
-            display: block;
             font-size: 2rem;
 
             color: ${theme.title.color};

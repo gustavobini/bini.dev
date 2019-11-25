@@ -24,10 +24,10 @@ The Card component might be implemented as follows:
 ```jsx
 function Card(props) {
   return (
-    <section style={{width: props.small ? '40px' : '80px'}}>
+    <section style={{ width: props.small ? '40px' : '80px' }}>
       {props.children}
     </section>
-  )
+  );
 }
 
 Card.propTypes = {
@@ -46,7 +46,7 @@ the implementation certainly needs to be changed. We need to get rid of the tern
 operator and put that logic somewhere else.
 
 ```jsx
-function getWidth({small, medium, large}) {
+function getWidth({ small, medium, large }) {
   let widthSize = '40px';
 
   if (medium) {
@@ -61,18 +61,14 @@ function getWidth({small, medium, large}) {
 }
 
 function Card(props) {
-  return (
-    <section style={{width: getWidth(props)}}>
-      {props.children}
-    </section>
-  )
+  return <section style={{ width: getWidth(props) }}>{props.children}</section>;
 }
 
 Card.propTypes = {
   small: PropTypes.bool,
   medium: PropTypes.bool,
   large: PropTypes.bool
-}
+};
 ```
 
 That works too! Now we can use our component and it's 3 different sizes:
@@ -105,19 +101,19 @@ const widthSize = {
   small: '40px',
   medium: '60px',
   large: '80px'
-}
+};
 
 function Card(props) {
   return (
-    <section style={{width: widthSize[props.widthSize]}}>
+    <section style={{ width: widthSize[props.widthSize] }}>
       {props.children}
     </section>
-  )
+  );
 }
 
 Card.propTypes = {
   widthSize: PropTypes.oneOf(['small', 'medium', 'large'])
-}
+};
 ```
 
 Now, our component is consumed like this:
