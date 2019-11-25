@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { fetchPosts } from './fetch-posts';
+import { fetchPosts } from '../../src/fetch-posts';
 import { Page } from '../../src/layout/main';
 import { Nav } from '../../src/components/nav';
 import { theme } from '../../src/layout/theme';
