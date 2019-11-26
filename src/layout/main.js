@@ -1,11 +1,15 @@
 import React from 'react';
 import Head from 'next/head';
 
-export function Page({ pageTitle }) {
+function createTitle(title) {
+  return `bini.dev${title ? ' | ' + title : ''}`;
+}
+
+export function Page({ pageTitle = '' }) {
   return (
     <>
       <Head>
-        <title>{pageTitle}</title>
+        <title>{createTitle(pageTitle)}</title>
       </Head>
       <style jsx global>
         {`
@@ -21,8 +25,7 @@ export function Page({ pageTitle }) {
           }
 
           body {
-            padding: 12px;
-            min-height: 100vh;
+            padding: 1rem;
             background-color: #f5f5f5;
             color: #666;
           }
