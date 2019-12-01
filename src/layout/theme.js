@@ -4,7 +4,7 @@ export const theme = {
     fontSize: '2rem'
   },
   text: {
-    color: '#666666',
+    color: '#333',
     fontSize: '1rem',
     lineHeight: '1.6',
     margin: '1rem 0'
