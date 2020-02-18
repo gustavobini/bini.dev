@@ -10,7 +10,7 @@ function requireAll(r) {
 }
 
 function requirePosts() {
-  return requireAll(require.context('../pages/blog/posts', true, /\.mdx$/));
+  return requireAll(require.context('../pages/blog', true, /\.mdx$/));
 }
 
 function parsePosts(posts) {

@@ -15,7 +15,7 @@ export default function Blog(props) {
         <ol>
           {props.posts.map((post, index) => (
             <li key={index}>
-              <Link href={`/blog/posts/${post.url}`}>
+              <Link href={`/blog/${post.url}`}>
                 <a>
                   {post.title} ({post.createdAt})
                 </a>
