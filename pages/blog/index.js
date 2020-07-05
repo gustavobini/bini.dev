@@ -2,9 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 
 import { fetchPosts } from '../../src/fetch-posts';
-import { Page } from '../../src/layout/main';
+import { Page } from '../../src/layout/page';
 import { Nav } from '../../src/components/nav';
-import { theme } from '../../src/layout/theme';
 
 export default function Blog(props) {
   return (
@@ -40,7 +39,7 @@ export default function Blog(props) {
           }
 
           li a {
-            color: ${theme.link.color};
+            color: #1976d2;
             text-decoration: none;
             font-size: 1.2rem;
             font-weight: 900;
@@ -57,8 +56,6 @@ export function getStaticProps() {
   posts.forEach((post) => {
     delete post.Post;
   });
-
-  console.log(posts);
 
   return {
     props: { posts },

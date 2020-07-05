@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: monospace;
+  font-size: 16px;
+}
+
+body {
+  padding: 1rem;
+  background-color: #fff;
+  color: #666;
+}
+
+body > div {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+:root {
+  --title-color: #546e7a;
+  --title-font-size: 2rem;
+
+  --text-color: #333;
+  --text-font-size: 1rem;
+
+  --link-color: #1976d2;
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { theme } from '../layout/theme';
 
 export function Nav({ vertical }) {
   return (
@@ -43,7 +42,7 @@ export function Nav({ vertical }) {
           a.pagename {
             font-size: 2rem;
 
-            color: ${theme.title.color};
+            color: #1976d2;
             text-align: right;
             text-decoration: none;
           }
