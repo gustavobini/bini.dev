@@ -51,10 +51,16 @@ export default function Blog(props) {
   );
 }
 
-Blog.getInitialProps = async () => {
+export function getStaticProps() {
   const posts = fetchPosts();
 
+  posts.forEach((post) => {
+    delete post.Post;
+  });
+
+  console.log(posts);
+
   return {
-    posts
+    props: { posts },
   };
-};
+}

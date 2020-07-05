@@ -9,14 +9,14 @@
     "format": "prettier --write \"{src,pages}/**/*.js\""
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.5",
-    "@next/mdx": "^9.2.2",
-    "next": "9.2.2",
-    "react": "16.12.0",
-    "react-dom": "16.12.0"
+    "@mdx-js/loader": "^1.6.6",
+    "@next/mdx": "^9.4.4",
+    "next": "^9.4.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^2.0.5"
   },
   "prettier": {
     "singleQuote": true
