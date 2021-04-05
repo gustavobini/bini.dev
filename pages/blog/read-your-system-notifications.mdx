@@ -1,0 +1,36 @@
+import { Post } from '../../src/layout/post';
+
+export const meta = {
+  createdAt: '2021-04-05',
+  title: 'Read your system\'s notifications'
+};
+
+<Post>
+
+# Read your system's notifications
+
+Today, after over a month of it being turned off, I've turned my Surface Laptop 3 on. I rarely
+use it nowdays because my work is done on a company Macbook.
+
+Anyway, after installing some updates, I checked this blog's repository. Right after opening Visual Studio Code,
+I get a nice notification that tells me I am opening this project folder from within Ubuntu (WSL2) but the folder
+is in the Windows File System. At first, I ignore it and proceed to updating the packages in the blog project.
+
+Right before running a local build command to check if things are ok, I decide to time the execution:
+
+```bash
+time npm run build
+npm run build  22.81s user 9.03s system 79% cpu 40.163 total
+```
+
+Then, I proceed to adding and pushing the changes to the repository so I can get a fresh clone from within the
+Ubuntu File System. There, after a quick `npm ci` I run
+
+```bash
+time npm run build
+npm run build  32.07s user 2.00s system 334% cpu 10.177 total
+```
+
+The difference is HUGE, from 40.163 seconds to 10.177 seconds!
+
+</Post>
