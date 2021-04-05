@@ -23,15 +23,6 @@ export function Nav({ vertical }) {
           <a className="pagename">bini.dev</a>
         </Link>
       </section>
-      <nav>
-        <ul className={vertical ? 'vertical' : ''}>
-          <li>
-            <Link href="/blog">
-              <a>blog</a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
       <style jsx>
         {`
           section.links {
