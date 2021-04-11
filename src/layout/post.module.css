@@ -14,11 +14,3 @@
   padding: 20px;
   background-color: tomato;
 }
-
-.pre {
-  color: #f5f5f5;
-  overflow-x: auto;
-  background-color: #666;
-  padding: 1rem;
-  border-radius: 4px;
-}
